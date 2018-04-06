@@ -6,14 +6,14 @@ function sendMail() {
 // スプレッドシート（MS Excelで言う所のブック）を取得
 var book = SpreadsheetApp.getActiveSpreadsheet();
 // 注意！メール配信用シートシートを取得
-var sheetAtesakiList = book.getSheetByName("注意！メール配信用シート");
+var sheetAtesakiList = book.getSheetByName("リストがあるシート名");
 // データが入力されている範囲を取得
 var datRange = sheetAtesakiList.getDataRange();
 // 処理対象の行数を取得
 var numRows = datRange.getNumRows();
 //————- （２）メール本文の情報を取得 ———————–
 // メール本文シートを取得
-var sheetMailHonbun = book.getSheetByName("メール本文");
+var sheetMailHonbun = book.getSheetByName("メール本文があるシート名");
 // メール件名を取得
 var subject = sheetMailHonbun.getRange(2, 3).getValue();
 // メール本文を取得
