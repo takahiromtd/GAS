@@ -22,7 +22,7 @@ var atesaki = sheetAtesaki.getRange(i, 1).getValue();
 var payload = {
 "id" : "SimgXZFYKMy7d", // Accrete ID
 "pass" : "wRW8kaui", // Accrete PASS
-"text" : "test haishin", // 送付したい文章（70字）
+"text" : "武者修行プログラム説明会は明日開催。体験談が直接聞けます!お楽しみにPV:goo.gl/JbymVz武者修行事務局03-6803-0927", // 送付したい文章（70字）
 "telno" : atesaki, // 送付先電話番号
 }
 
