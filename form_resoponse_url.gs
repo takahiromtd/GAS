@@ -3,15 +3,15 @@
  */
 
 // Form URL
-var formURL = 'https://docs.google.com/forms/d/13JIcCur9KrQLeUUUy5Qp-4qGC0NyzGoLZWX2svKDFzQ/edit';
+var formURL = 'https://docs.google.com/forms/d/10HYMYnuwuXKQZ42RArALhIknpj9WoT1K-_3f2TnB0eI/edit';　//フォームの編集画面のURL
 // Sheet name used as destination of the form responses
-var sheetName = 'Form Responses 1';
+var sheetName = 'ビザ確認フォーム_18夏（仮）';　//フォームの回答先シート名
 /*
  * Name of the column to be used to hold the response edit URLs 
  * It should match exactly the header of the related column, 
  * otherwise it will do nothing.
  */
-var columnName = 'Edit Url' ;
+var columnName = 'Edit Url' ; //出力したい列名を入力
 // Responses starting row
 var startRow = 2;
 
