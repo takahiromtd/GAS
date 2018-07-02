@@ -1,7 +1,7 @@
 function myFunction(){
 
   // PDFの保存先となるフォルダID 確認方法は後述
-  var folderid = "18qNzg_Lt1_nAp-JEqgj0rt88cAZIyTs2";
+  var folderid = "***********フォルダIDを入れてください***********";
   
   // マイドライブ直下に保存したい場合は以下
   // var root= DriveApp.getRootFolder();
@@ -22,7 +22,7 @@ function myFunction(){
 
   // ファイル名に使用する名前を取得
   var customer_name = ss.getRange("B1").getValue();
-  // ここで例として使用しているスプレッドシートのC15に顧客の名前が入っているため、それをファイル名用に取得しているだけです。
+  // ここで例として使用しているスプレッドシートのB1に顧客の名前が入っているため、それをファイル名用に取得しているだけです。
 
   // ファイル名に使用するタイムスタンプを取得
   var timestamp = getTimestamp();
