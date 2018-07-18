@@ -1,5 +1,7 @@
 function myFunction(){
 
+  //参考にしたURL：https://www.virment.com/create-pdf-google-apps-script/
+
   // PDFの保存先となるフォルダID 確認方法は後述
   var folderid = "18qNzg_Lt1_nAp-JEqgj0rt88cAZIyTs2";
   
