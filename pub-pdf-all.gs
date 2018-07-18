@@ -1,7 +1,7 @@
 function myFunction(){
 
   // PDFの保存先となるフォルダID 確認方法は後述
-  var folderid = "***********フォルダIDを入れてください***********";
+  var folderid = "18qNzg_Lt1_nAp-JEqgj0rt88cAZIyTs2";
   
   // マイドライブ直下に保存したい場合は以下
   // var root= DriveApp.getRootFolder();
@@ -19,28 +19,34 @@ function myFunction(){
   // 現在開いているスプレッドシートのシートIDを取得
   var sheetid = ss.getActiveSheet().getSheetId();
   // getActiveSheetの後の()を忘れると、TypeError: オブジェクト function getActiveSheet() {/* */} で関数 getSheetId が見つかりません。
-
-  // ファイル名に使用する名前を取得
-  var customer_name = ss.getRange("B1").getValue();
-  // ここで例として使用しているスプレッドシートのB1に顧客の名前が入っているため、それをファイル名用に取得しているだけです。
-
-  // ファイル名に使用するタイムスタンプを取得
-  var timestamp = getTimestamp();
   
   // PDF作成関数
-  createPDF( folderid, ssid, sheetid, customer_name + "_" + timestamp );
+  createPDF( folderid, ssid, sheetid );
   
 }
 
 // PDF作成関数　引数は（folderid:保存先フォルダID, ssid:PDF化するスプレッドシートID, sheetid:PDF化するシートID, filename:PDFの名前）
-function createPDF(folderid, ssid, sheetid, filename){
+function createPDF(folderid, ssid, sheetid){
 
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  
  for(var i = 1; i <= 5; i++) {
   ss.getRange("A1").setValue(i);
   SpreadsheetApp.flush();
-   
+
+  // ファイル名に使用する名前を取得
+  var customer_name = ss.getRange("B1").getValue();
+  // ここで使用しているスプレッドシートのB1に顧客の名前が入っているため、それをファイル名用に取得しているだけです。
+
+  var customer_term = ss.getRange("C1").getValue();
+  // ここで使用しているスプレッドシートのC1にタームの名前が入っているため、それをファイル名用に取得しているだけです。
+
+  // ファイル名に使用するタイムスタンプを取得
+  var timestamp = getTimestamp(); 
+
+  //  + "_" + timestamp でタイムスタンプ追加
+  var filename= customer_term + "_" + customer_name
+
   // PDFファイルの保存先となるフォルダをフォルダIDで指定
   var folder = DriveApp.getFolderById(folderid);
 
