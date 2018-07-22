@@ -3,7 +3,7 @@ function myFunction(){
   //参考にしたURL：https://www.virment.com/create-pdf-google-apps-script/
 
   // PDFの保存先となるフォルダID 確認方法は後述
-  var folderid = "18qNzg_Lt1_nAp-JEqgj0rt88cAZIyTs2";
+  var folderid = "1Oispkz-lT9hrXaUiCCP0YPv4kb83Nv_g";
   
   // マイドライブ直下に保存したい場合は以下
   // var root= DriveApp.getRootFolder();
@@ -31,12 +31,16 @@ function myFunction(){
 function createPDF(folderid, ssid, sheetid){
 
  var ss = SpreadsheetApp.getActiveSpreadsheet();
- 
- for(var i = 1; i <= 5; i++) {
+ var nop = ss.getRange("D1").getValue();
+ var nos = ss.getRange("A1").getValue();
+  
+ for(var i = nos; i <= nop; i++) {
   ss.getRange("A1").setValue(i);
   SpreadsheetApp.flush();
 
-  // ファイル名に使用する名前を取得
+   Utilities.sleep(8000);
+  
+   // ファイル名に使用する名前を取得
   var customer_name = ss.getRange("B1").getValue();
   // ここで使用しているスプレッドシートのB1に顧客の名前が入っているため、それをファイル名用に取得しているだけです。
 
