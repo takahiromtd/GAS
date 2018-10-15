@@ -9,7 +9,7 @@ function myFunction() {
   for (var i = 2; i <= numRows; i++){
   var atesaki = sheetAtesaki.getRange(i, 1).getValue();
   var payload = {
-    "token" : "xoxp-5222384035-5222384043-456342327043-bff6e0ac2dc51fa281e425ae3896da01",
+    "token" : "xoxp",
     "channel" : "", // channelはユーザー名を入れるので空にしておく
     "text": "通知したいメッセージ"
   }
