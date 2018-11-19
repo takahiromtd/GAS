@@ -1,3 +1,4 @@
+// FormApp.getActiveForm()
 function sendToSlack(body, channel) {
   var url = "https://hooks.slack.com/services/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";
   var data = { "channel" : channel, "username" : "Googleフォーム Bot", "text" : body, "icon_emoji" : ":date: " };
